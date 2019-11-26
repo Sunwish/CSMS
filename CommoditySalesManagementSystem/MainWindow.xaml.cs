@@ -33,7 +33,7 @@ namespace CommoditySalesManagementSystem
             Login(TextBox_UserName.Text, TextBox_Password.Password, @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
-        private void Login(string userName, string password, string connString)
+        public void Login(string userName, string password, string connString)
         {
             SqlConnection connection = new SqlConnection(connString);
             //获取用户名和密码匹配的行的数量的SQL语句

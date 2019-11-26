@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="CommodityAddWindow" Height="300" Width="484.918">
+        Title="商品录入" Height="246.4" Width="262.518">
     <Grid>
-        
+        <Label Content="商品名称：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,45,0,0" Width="74"></Label>
+        <Label Content="商品价格：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,85,0,0" Width="74"></Label>
+        <TextBox x:Name="ItemName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="108,45,0,0"></TextBox>
+        <TextBox x:Name="ItemPrice" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="108,85,0,0"/>
+        <Button x:Name="ButtonSubmit" Content="录入" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="29,164,28,0" Width="199" Height="34" Click="ButtonSubmit_Click"></Button>
+        <Label Content="商品编号：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,10,0,0" Width="74"/>
+        <TextBox x:Name="ItemId" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="108,10,0,0"/>
+        <Label Content="商品数量：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,123,0,0" Width="74"/>
+        <TextBox x:Name="ItemCount" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="108,123,0,0"/>
     </Grid>
 </Window>
