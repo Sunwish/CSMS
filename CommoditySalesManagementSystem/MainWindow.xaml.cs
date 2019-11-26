@@ -24,6 +24,8 @@ namespace CommoditySalesManagementSystem
         public MainWindow()
         {
             InitializeComponent();
+
+            TextBox_UserName.Focus();
         }
 
         private void Button_Login_Click(object sender, RoutedEventArgs e)
@@ -46,7 +48,7 @@ namespace CommoditySalesManagementSystem
                     MessageBox.Show("欢迎进入商品销售管理系统！", "登录成功", MessageBoxButton.OK, MessageBoxImage.Information);
                     MainFrm mainForm = new MainFrm();// 创建主窗体对象                    
                     mainForm.Show();// 显示窗体                   
-                    this.Visibility = Visibility.Hidden; // 登录窗体隐藏
+                    this.Close();
                 }
                 else
                 {

@@ -15,24 +15,13 @@ using System.Windows.Shapes;
 namespace CommoditySalesManagementSystem
 {
     /// <summary>
-    /// MainFrm.xaml 的交互逻辑
+    /// CommodityAddWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainFrm : Window
+    public partial class CommodityAddWindow : Window
     {
-        public MainFrm()
+        public CommodityAddWindow()
         {
             InitializeComponent();
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            CommodityAddWindow addForm = new CommodityAddWindow();// 创建主窗体对象
-            addForm.Show();// 显示窗体
         }
     }
 }
