@@ -8,7 +8,7 @@
         Title="CSMS" Height="248.4" Width="389.8">
     <Grid>
         <TextBox x:Name="TextBox_UserName" HorizontalAlignment="Left" Height="23" Margin="100,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177"/>
-        <TextBox x:Name="TextBox_Password" HorizontalAlignment="Left" Height="23" Margin="100,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177"/>
+        <PasswordBox x:Name="TextBox_Password" HorizontalAlignment="Left" Height="23" Margin="100,90,0,0" VerticalAlignment="Top" Width="177"/>
         <Button x:Name="Button_Login" Content="登录" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177" Margin="100,142,0,0" Height="34" Click="Button_Login_Click"/>
         <Label Content="用户名" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,41,0,0"/>
         <Label Content="密码" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,90,0,0"/>
