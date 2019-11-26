@@ -30,10 +30,11 @@ namespace CommoditySalesManagementSystem
 
         private void Button_Login_Click(object sender, RoutedEventArgs e)
         {
-            string userName = TextBox_UserName.Text;
-            string password = TextBox_Password.Password;
-            string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
-";
+            Login(TextBox_UserName.Text, TextBox_Password.Password, @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        }
+
+        private void Login(string userName, string password, string connString)
+        {
             SqlConnection connection = new SqlConnection(connString);
             //获取用户名和密码匹配的行的数量的SQL语句
             string sql = String.Format("select count(*) from [User] where userName='{0}'and password='{1}'", userName, password);
@@ -65,5 +66,13 @@ namespace CommoditySalesManagementSystem
             }
         }
 
+        private void TextBox_Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                e.Handled = true;
+                Login(TextBox_UserName.Text, TextBox_Password.Password, @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            }
+        }
     }
 }
