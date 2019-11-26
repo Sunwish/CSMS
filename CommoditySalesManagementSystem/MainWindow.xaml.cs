@@ -24,14 +24,17 @@ namespace CommoditySalesManagementSystem
         public MainWindow()
         {
             InitializeComponent();
+
+            TextBox_UserName.Focus();
         }
 
         private void Button_Login_Click(object sender, RoutedEventArgs e)
         {
-            string userName = TextBox_UserName.Text;
-            string password = TextBox_Password.Password;
-            string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
-";
+            Login(TextBox_UserName.Text, TextBox_Password.Password, @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        }
+
+        public void Login(string userName, string password, string connString)
+        {
             SqlConnection connection = new SqlConnection(connString);
             //获取用户名和密码匹配的行的数量的SQL语句
             string sql = String.Format("select count(*) from [User] where userName='{0}'and password='{1}'", userName, password);
@@ -46,7 +49,7 @@ namespace CommoditySalesManagementSystem
                     MessageBox.Show("欢迎进入商品销售管理系统！", "登录成功", MessageBoxButton.OK, MessageBoxImage.Information);
                     MainFrm mainForm = new MainFrm();// 创建主窗体对象                    
                     mainForm.Show();// 显示窗体                   
-                    this.Visibility = Visibility.Hidden; // 登录窗体隐藏
+                    this.Close();
                 }
                 else
                 {
@@ -63,5 +66,13 @@ namespace CommoditySalesManagementSystem
             }
         }
 
+        private void TextBox_Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                e.Handled = true;
+                Login(TextBox_UserName.Text, TextBox_Password.Password, @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            }
+        }
     }
 }
