@@ -44,9 +44,9 @@ namespace CommoditySalesManagementSystem
                 {
                     //如果有匹配的行,则表明用户名和密码正确
                     MessageBox.Show("欢迎进入商品销售管理系统！", "登录成功", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //MainFrm mainForm = new MainFrm();// 创建主窗体对象                    
-                    //mainForm.Show();// 显示窗体                   
-                    //this.Visible = false; // 登录窗体隐藏
+                    MainFrm mainForm = new MainFrm();// 创建主窗体对象                    
+                    mainForm.Show();// 显示窗体                   
+                    this.Visibility = Visibility.Hidden; // 登录窗体隐藏
                 }
                 else
                 {
