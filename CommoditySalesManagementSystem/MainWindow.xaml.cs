@@ -30,10 +30,12 @@ namespace CommoditySalesManagementSystem
         {
             string userName = TextBox_UserName.Text;
             string password = TextBox_Password.Text;
-            string connString = "Data Source=(local);Initial Catalog=MySchool;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connString);
+            string connString = @" Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+           
+            
+             SqlConnection connection = new SqlConnection(connString);
             //获取用户名和密码匹配的行的数量的SQL语句
-            string sql = String.Format("select count(*) from [User] where userName='{0}'and password='{1}'", userName, password);
+            string sql = String.Format("select count(*) from [ms] where userName='{0}'and password='{1}'", userName, password);
             try
             {
                 connection.Open();// 打开数据库连接           
