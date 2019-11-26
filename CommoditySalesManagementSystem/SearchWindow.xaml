@@ -1,0 +1,17 @@
+﻿<Window x:Class="CommoditySalesManagementSystem.SearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CommoditySalesManagementSystem"
+        mc:Ignorable="d"
+        Title="SearchWindow" Height="450" Width="800">
+    <Grid Margin="-23,-29,-41.4,-20">
+        <Button Content="查询全部货物" HorizontalAlignment="Left" Margin="571,50,0,0" VerticalAlignment="Top" Width="142" Height="51" RenderTransformOrigin="1.221,0.52" Click="Button_Click"/>
+        <ListBox x:Name="listbox1" HorizontalAlignment="Left" Height="246" Margin="56,132,0,0" VerticalAlignment="Top" Width="657" SelectionChanged="ListBox_SelectionChanged"/>
+        <TextBox x:Name="context1" HorizontalAlignment="Left" Height="51" Margin="183,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" TextChanged="TextBox_TextChanged"/>
+        <Label Content="输入商品名称" HorizontalAlignment="Left" Margin="70,50,0,0" VerticalAlignment="Top" Width="108" Height="51" FontSize="14" FontWeight="Bold"/>
+        <Button Content="查询此货物信息" HorizontalAlignment="Left" Margin="372,50,0,0" VerticalAlignment="Top" Width="93" Height="51" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

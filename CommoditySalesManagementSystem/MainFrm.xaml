@@ -8,9 +8,9 @@
         Title="MainFrm" Height="312.787" Width="495.738" Closed="Window_Closed">
     <Grid>
         <Menu HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="490" Margin="0,0,-0.4,0">
-            <MenuItem Header="商品信息管理">
+            <MenuItem Header="商品信息管理" Click="MenuItem_Click">
                 <MenuItem Header="录入"/>
-                <MenuItem Header="查询"/>
+                <MenuItem Header="查询" Click="MenuItem_Click_1"/>
                 <MenuItem Header="信息维护"/>
             </MenuItem>
             <MenuItem Header="销售信息管理">
