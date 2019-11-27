@@ -29,16 +29,16 @@ namespace CommoditySalesManagementSystem
             
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_Add(object sender, RoutedEventArgs e)
         {
-
+            CommodityAddWindow add = new CommodityAddWindow();
+            add.Show();
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_Search(object sender, RoutedEventArgs e)
         {
             SearchWindow search= new SearchWindow();// 创建主窗体对象                    
             search.Show();// 显示窗体                   
-           // this.Visibility = Visibility.Hidden; // 登录窗体隐藏
         }
     }
 }
