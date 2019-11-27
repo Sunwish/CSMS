@@ -40,5 +40,11 @@ namespace CommoditySalesManagementSystem
             SearchWindow search= new SearchWindow();// 创建主窗体对象                    
             search.Show();// 显示窗体                   
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateWindow update = new UpdateWindow();
+            update.Show();
+        }
     }
 }

@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="CSMS" Height="248.4" Width="389.8">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="383*"/>
+            <ColumnDefinition Width="86*"/>
+        </Grid.ColumnDefinitions>
         <TextBox x:Name="TextBox_UserName" HorizontalAlignment="Left" Height="23" Margin="100,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Text="yjh"/>
         <PasswordBox x:Name="TextBox_Password" HorizontalAlignment="Left" Height="23" Margin="100,90,0,0" VerticalAlignment="Top" Width="177" KeyDown="TextBox_Password_KeyDown" Password="123456"/>
         <Button x:Name="Button_Login" Content="登录" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177" Margin="100,142,0,0" Height="34" Click="Button_Login_Click"/>

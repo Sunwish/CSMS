@@ -11,7 +11,7 @@
             <MenuItem Header="商品信息管理">
                 <MenuItem Header="录入" Click="MenuItem_Click_Add"/>
                 <MenuItem Header="查询" Click="MenuItem_Click_Search"/>
-                <MenuItem Header="信息维护"/>
+                <MenuItem Header="信息维护" Click="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="销售信息管理">
                 <MenuItem Header="查询销售情况"/>
