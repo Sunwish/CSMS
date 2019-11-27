@@ -20,6 +20,7 @@ namespace CommoditySalesManagementSystem
     /// </summary>
     public partial class SearchWindow : Window
     {
+
         public SearchWindow()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace CommoditySalesManagementSystem
             string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 SqlConnection con= new SqlConnection(connString);
                
-                string sql = String.Format("select * from Commondity");
+                //string sql = String.Format("select * from Commondity");
                 string sql1 = "select * from Commondity";
                 con.Open();// 打开数据库连接           
                 SqlCommand com = new SqlCommand(sql1, con); //创建 Command 对象
@@ -53,12 +54,12 @@ namespace CommoditySalesManagementSystem
 
                     string name = read["Name"].ToString(); 
 
-                    string time = read["Count"].ToString();
+                    string count = read["Count"].ToString();
 
                     string price = read["Price"].ToString();
 
                     // int day = Convert.ToInt32(read["列名5"]);
-                    listbox1.Items.Add(ID.ToString()+ "  "+ name.ToString()+ price.ToString());
+                    listbox1.Items.Add(ID.ToString()+ "  "+ name.ToString()+ price.ToString() + count.ToString());
                     //listbox1.Items.Add(name.ToString());
                     //listbox1.Items.Add(name.ToString());
                     //listbox1.Items.Add(price.ToString());
