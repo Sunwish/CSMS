@@ -31,7 +31,7 @@ namespace CommoditySalesManagementSystem
             string Name = context.Text;
              string money = context2.Text;
             string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            string sql1 = String.Format("updata  Commondity set Price='{0}'where Name='{1}'", money, Name);
+            string sql1 = String.Format("update  Commondity set Price='{0}'where Name='{1}'",money, Name);
             try    //try里面放可能出现错误的代码
             {
                 SqlConnection con = new SqlConnection(connString);
