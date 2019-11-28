@@ -14,7 +14,7 @@
                 <MenuItem Header="信息维护" Click="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="销售信息管理">
-                <MenuItem Header="查询销售情况"/>
+                <MenuItem Header="查询销售情况" Click="MenuItem_Click_1"/>
                 <MenuItem Header="销售信息计算"/>
             </MenuItem>
         </Menu>

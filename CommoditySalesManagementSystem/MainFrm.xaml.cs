@@ -46,5 +46,11 @@ namespace CommoditySalesManagementSystem
             UpdateWindow update = new UpdateWindow();
             update.Show();
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            SalesRecordsWindow sales = new SalesRecordsWindow();
+            sales.Show();
+        }
     }
 }
