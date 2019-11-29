@@ -25,57 +25,26 @@ namespace CommoditySalesManagementSystem
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)//更改商品价格
+        private void Button_Click(object sender, RoutedEventArgs e) //更改商品价格
         {
-            // listbox1.Items.Clear();
-            string Name = context.Text;
-             string money = context2.Text;
-            string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            string sql1 = String.Format("update  Commondity set Price='{0}'where Name='{1}'",money, Name);
-            try    //try里面放可能出现错误的代码
+            string sql = String.Format("update  Commondity set Price='{0}'where Name='{1}'", context2.Text, context.Text);
+            try
             {
-                SqlConnection con = new SqlConnection(connString);
-               // SqlConnection con = new SqlConnection(connString);
-                con.Open();// 打开数据库连接           
-                SqlCommand com = new SqlCommand(sql1, con); //创建 Command 对象
-                int read = com.ExecuteNonQuery();
-
-                if (read > 0)
-                    MessageBox.Show("修改成功！", "修改成功", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (SqlManager.ExecuteCommand(sql) > 0)
+                    MessageBox.Show("修改成功！", "修改成功", 0, MessageBoxImage.Information);
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e) //更改商品名称
         {
-            
-        }
-        
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)//更改商品名称
-        {
-            // listbox1.Items.Clear();
-            string n = context3.Text;
-            string Name = context.Text;
-            string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            string sql1 = String.Format("update  Commondity set Name='{0}'where Name='{1}'", n, Name);
-            try    //try里面放可能出现错误的代码
+            string sql = String.Format("update  Commondity set Name='{0}'where Name='{1}'", context3.Text, context.Text);
+            try
             {
-                SqlConnection con = new SqlConnection(connString);
-                con.Open();// 打开数据库连接           
-                SqlCommand com = new SqlCommand(sql1, con); //创建 Command 对象
-                int read = com.ExecuteNonQuery();
-
-              //  if(read>0)
-                MessageBox.Show("修改成功！", "修改成功", MessageBoxButton.OK, MessageBoxImage.Information);
+                if(SqlManager.ExecuteCommand(sql) > 0)
+                    MessageBox.Show("修改成功！", "修改成功", 0, MessageBoxImage.Information);
             }
-            catch (Exception) { Console.WriteLine("哈哈哈网络异常啦!"); }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
         }
-        
     }
 }

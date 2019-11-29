@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="MainFrm" Height="312.787" Width="495.738" Closed="Window_Closed">
+        Title="MainFrm" Height="312.787" Width="495.738">
     <Grid x:Name="Center">
         <Menu HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="490" Margin="0,0,-0.4,0">
             <MenuItem Header="商品信息管理">
@@ -14,7 +14,7 @@
                 <MenuItem Header="信息维护" Click="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="销售信息管理">
-                <MenuItem Header="查询销售情况"/>
+                <MenuItem Header="查询销售情况" Click="MenuItem_Click_1"/>
                 <MenuItem Header="销售信息计算"/>
             </MenuItem>
         </Menu>
