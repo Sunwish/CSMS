@@ -50,6 +50,36 @@ namespace CommoditySalesManagementSystem
             ShowWindow<SalesRecordsWindow>();
         }
 
+        private void Button1_Click(object sender, RoutedEventArgs e)//tianjia
+        {
+            //context3.Items.Clear();
+            string sql1 = String.Format("select * from Commondity where Id='{0}'", context1.Text);
+            try
+            {
+                List<string> ids = SqlManager.ReadColumn(sql1, "Id");
+                List<string> names = SqlManager.ReadColumn(sql1, "Name");
+                List<string> counts = SqlManager.ReadColumn(sql1, "Count");
+                List<string> prices = SqlManager.ReadColumn(sql1, "Price");
+                for (int i = 0; i < ids.Count; i++)
+                    context3.Items.Add(ids[i].Trim() + " 商品名称：  " + names[i].Trim() + "    价格为：  " + prices[i].Trim());
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+        }
 
+        private void Button2_Click(object sender, RoutedEventArgs e)//结算
+        {
+           // string sql1 = String.Format("select Count from Table where Name='{0}'", context1.Text);
+           // int c = int.Parse(SqlManager.ReadColumn(sql1, "Count")[0]);
+
+            string sql = String.Format("INSERT INTO Sale(Id, Count) VALUES('{0}','{1}')", int.Parse(context1.Text), context2.Text);
+           
+            try
+            {
+                if (SqlManager.ExecuteCommand(sql) > 0)
+                    MessageBox.Show("结算成功！", "结算成功", 0, MessageBoxImage.Information);
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+        }
     }
-}
+    }
+

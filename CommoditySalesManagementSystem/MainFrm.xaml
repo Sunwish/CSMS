@@ -18,6 +18,12 @@
                 <MenuItem Header="销售信息计算"/>
             </MenuItem>
         </Menu>
-
+        <Label  Content="请输入货物ID" HorizontalAlignment="Left" Height="32" Margin="42,43,0,0" VerticalAlignment="Top" Width="98"/>
+        <TextBox x:Name="context1"  HorizontalAlignment="Left" Height="23" Margin="145,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
+        <Button x:Name="button2" Content="结算" HorizontalAlignment="Left" Margin="158,211,0,0" VerticalAlignment="Top" Width="166" Click="Button2_Click" Height="41"/>
+        <ListBox x:Name="context3" HorizontalAlignment="Left" Height="87" Margin="49,110,0,0" VerticalAlignment="Top" Width="408"/>
+        <Button x:Name="button1" Content="添加" HorizontalAlignment="Left" Margin="285,55,0,0" VerticalAlignment="Top" Width="84" Click="Button1_Click" Height="24"/>
+        <Label  Content="请输入货物数量" HorizontalAlignment="Left" Height="32" Margin="42,71,0,0" VerticalAlignment="Top" Width="98"/>
+        <TextBox x:Name="context2"  HorizontalAlignment="Left" Height="23" Margin="145,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
     </Grid>
 </Window>
