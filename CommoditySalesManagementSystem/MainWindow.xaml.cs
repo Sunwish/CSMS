@@ -24,7 +24,6 @@ namespace CommoditySalesManagementSystem
         public MainWindow()
         {
             InitializeComponent();
-
             TextBox_UserName.Focus();
         }
 
@@ -35,35 +34,26 @@ namespace CommoditySalesManagementSystem
 
         public void Login(string userName, string password, string connString)
         {
-            SqlConnection connection = new SqlConnection(connString);
             //获取用户名和密码匹配的行的数量的SQL语句
             string sql = String.Format("select count(*) from [User] where userName='{0}'and password='{1}'", userName, password);
             try
             {
-                connection.Open();// 打开数据库连接           
-                SqlCommand command = new SqlCommand(sql, connection); //创建 Command 对象
-                int num = (int)command.ExecuteScalar();//执行查询语句,返回匹配的行数
-                if (num > 0)
+                if (SqlManager.ExecuteScalar(sql) > 0)
                 {
                     //如果有匹配的行,则表明用户名和密码正确
-                    MessageBox.Show("欢迎进入商品销售管理系统！", "登录成功", MessageBoxButton.OK, MessageBoxImage.Information);
-                    MainFrm mainForm = new MainFrm();// 创建主窗体对象                    
-                    mainForm.Show();// 显示窗体                   
-                    this.Close();
+                    MessageBox.Show("欢迎进入商品销售管理系统！", "登录成功", 0, MessageBoxImage.Information);
+                    ShowMainFrm();
                 }
-                else
-                {
-                    MessageBox.Show("您输入的用户名或密码错误！", "登录失败", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                }
+                else MessageBox.Show("您输入的用户名或密码错误！", "登录失败", 0, MessageBoxImage.Exclamation);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "操作数据库出错！", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }
-            finally
-            {
-                connection.Close();// 关闭数据库连接
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "操作数据库出错！", 0, MessageBoxImage.Exclamation); }
+        }
+
+        private void ShowMainFrm(bool closeThisFrm = true)
+        {
+            MainFrm mainForm = new MainFrm(); // 创建主窗体对象                    
+            mainForm.Show(); // 显示窗体                   
+            if(closeThisFrm)  this.Close();
         }
 
         private void TextBox_Password_KeyDown(object sender, KeyEventArgs e)

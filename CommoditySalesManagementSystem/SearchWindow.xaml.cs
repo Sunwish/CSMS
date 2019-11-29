@@ -34,23 +34,17 @@ namespace CommoditySalesManagementSystem
         private void Button_Click(object sender, RoutedEventArgs e)  //查询货物
         {
             listbox1.Items.Clear();
-            string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             string sql1 = "select * from Commondity";
-
-            try    //try里面放可能出现错误的代码
+            try
             {
-                SqlConnection con = new SqlConnection(connString);
-                SqlDataReader read = SqlRead(con, sql1);  //用com(变量名)点上ExecuteReader()方法,该方法的类型是SqlDataReader类型
-                while (read.Read())
-                {
-                    int ID = Convert.ToInt32(read["Id"]);
-                    string name = read["Name"].ToString();
-                    string count = read["Count"].ToString();
-                    string price = read["Price"].ToString();
-                    listbox1.Items.Add(ID.ToString().Trim() + "  " + name.ToString().Trim() + "  " + price.ToString().Trim() + "  " + count.ToString().Trim());
-                }
+                List<string> ids = SqlManager.ReadColumn(sql1, "Id");
+                List<string> names = SqlManager.ReadColumn(sql1, "Name");
+                List<string> counts = SqlManager.ReadColumn(sql1, "Count");
+                List<string> prices = SqlManager.ReadColumn(sql1, "Price");
+                for (int i = 0; i < ids.Count; i++)
+                    listbox1.Items.Add(ids[i].Trim() + "  " + names[i].Trim() + "  " + prices[i].Trim() + "  " + counts[i].Trim());
             }
-            catch (Exception){Console.WriteLine("网络异常!");}
+            catch (Exception ex){ Console.WriteLine(ex.Message); }
         }
 
         private void ListBox_SelectionChanged(object sender, RoutedEventArgs e)
@@ -60,37 +54,17 @@ namespace CommoditySalesManagementSystem
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             listbox1.Items.Clear();
-            string Name = context1.Text;
-            string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            string sql1 = String.Format("select * from Commondity where Name='{0}'", Name);
-
-            try    //try里面放可能出现错误的代码
-            {
-                SqlConnection con = new SqlConnection(connString);
-                SqlDataReader read = SqlRead(con, sql1);
-                while (read.Read())
-                {
-                    int ID = Convert.ToInt32(read["Id"]);
-                    string name = read["Name"].ToString();
-                    string count = read["Count"].ToString();
-                    string price = read["Price"].ToString();
-                    listbox1.Items.Add(ID.ToString().Trim() + "  " + name.ToString().Trim() + "  " + price.ToString().Trim() + "  " + count.ToString().Trim());
-                }
-            }
-            catch (Exception){ Console.WriteLine("网络异常!"); }
-        }
-
-
-        private SqlDataReader SqlRead(SqlConnection con, string sqlString)
-        {
-            con.Open();// 打开数据库连接           
-            SqlCommand com = new SqlCommand(sqlString, con); //创建 Command 对象
+            string sql1 = String.Format("select * from Commondity where Name='{0}'", context1.Text);
             try
             {
-                SqlDataReader read = com.ExecuteReader();  //用com(变量名)点上ExecuteReader()方法,该方法的类型是SqlDataReader类型
-                return read;
+                List<string> ids = SqlManager.ReadColumn(sql1, "Id");
+                List<string> names = SqlManager.ReadColumn(sql1, "Name");
+                List<string> counts = SqlManager.ReadColumn(sql1, "Count");
+                List<string> prices = SqlManager.ReadColumn(sql1, "Price");
+                for (int i = 0; i < ids.Count; i++)
+                    listbox1.Items.Add(ids[i].Trim() + "  " + names[i].Trim() + "  " + prices[i].Trim() + "  " + counts[i].Trim());
             }
-            catch (Exception) { throw; }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
         }
     }
 }
