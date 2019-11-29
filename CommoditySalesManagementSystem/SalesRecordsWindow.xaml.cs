@@ -15,11 +15,6 @@ using System.Windows.Shapes;
 
 namespace CommoditySalesManagementSystem
 {
-    public class Item
-    {
-        public string Id { get; set; }
-        public string Count { get; set; }
-    }
     /// <summary>
     /// SalesRecordsWindow.xaml 的交互逻辑
     /// </summary>
@@ -29,13 +24,20 @@ namespace CommoditySalesManagementSystem
         {
             InitializeComponent();
 
-            string sql1 = "select * from [Table]";
-            try    //try里面放可能出现错误的代码
+            string sql1 = "select * from [Sale]";
+            try
             {
+                List<string> names = new List<string>();
                 List<string> ids = SqlManager.ReadColumn(sql1, "Id");
                 List<string> counts = SqlManager.ReadColumn(sql1, "Count");
-                for(int i = 0; i < ids.Count; i++)
-                    listView.Items.Add(new Item { Id = ids[i].Trim(), Count = counts[i].Trim()});
+                List<string> prices = SqlManager.ReadColumn(sql1, "Price");
+                foreach (string id in ids)
+                {
+                    string sql_Id2Name = "select * from [Commondity] where Id=" + id;
+                    names.Add(SqlManager.ReadColumn(sql_Id2Name, "name")[0]);
+                }
+                for (int i = 0; i < ids.Count; i++)
+                    listView.Items.Add(new SaltInfo { Id = ids[i].Trim(), Count = counts[i].Trim(), Name = names[i].Trim(), Money = prices[i].Trim() });
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 

@@ -50,6 +50,9 @@ namespace CommoditySalesManagementSystem
             ShowWindow<SalesRecordsWindow>();
         }
 
-
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            ShowWindow<SalesCalculation>();
+        }
     }
 }
