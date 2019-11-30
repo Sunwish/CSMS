@@ -20,6 +20,7 @@ namespace CommoditySalesManagementSystem
         public string Count { get; set; }
         public string Name { get; set; }
         public string Money { get; set; }
+        public string Time { get; set; }
     }
 
     /// <summary>

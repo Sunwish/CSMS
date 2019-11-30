@@ -18,12 +18,23 @@
                 <MenuItem Header="销售信息计算" Click="MenuItem_Click_2"/>
             </MenuItem>
         </Menu>
-        <Label  Content="请输入货物ID" HorizontalAlignment="Left" Height="32" Margin="42,43,0,0" VerticalAlignment="Top" Width="98"/>
-        <TextBox x:Name="context1"  HorizontalAlignment="Left" Height="23" Margin="145,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
-        <Button x:Name="button2" Content="结算" HorizontalAlignment="Left" Margin="158,211,0,0" VerticalAlignment="Top" Width="166" Click="Button2_Click" Height="41"/>
-        <ListBox x:Name="context3" HorizontalAlignment="Left" Height="87" Margin="49,110,0,0" VerticalAlignment="Top" Width="408"/>
-        <Button x:Name="button1" Content="添加" HorizontalAlignment="Left" Margin="285,55,0,0" VerticalAlignment="Top" Width="84" Click="Button1_Click" Height="24"/>
-        <Label  Content="请输入货物数量" HorizontalAlignment="Left" Height="32" Margin="42,71,0,0" VerticalAlignment="Top" Width="98"/>
-        <TextBox x:Name="context2"  HorizontalAlignment="Left" Height="23" Margin="145,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
+        <Label  Content="请输入货物ID" HorizontalAlignment="Left" Height="32" Margin="42,33,0,0" VerticalAlignment="Top" Width="98"/>
+        <TextBox x:Name="context1"  HorizontalAlignment="Left" Height="23" Margin="130,33,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136" TextChanged="context1_TextChanged"/>
+        <Button x:Name="button2" Content="结算" HorizontalAlignment="Left" Margin="158,214,0,0" VerticalAlignment="Top" Width="166" Click="Button2_Click" Height="41"/>
+        <ListView x:Name="ItemList" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="42 105 0 0" Width="400" Height="90">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"  Width="48"></GridViewColumn>
+                    <GridViewColumn Header="商品名称" DisplayMemberBinding="{Binding Name}" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="商品单价" DisplayMemberBinding="{Binding SinglePrice}" Width="80"></GridViewColumn>
+                    <GridViewColumn Header="数量" DisplayMemberBinding="{Binding Count}" Width="50"></GridViewColumn>
+                    <GridViewColumn Header="商品总额" DisplayMemberBinding="{Binding SumPrice}" Width="100"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="button1" Content="添加" HorizontalAlignment="Left" Margin="358,68,0,0" VerticalAlignment="Top" Width="84" Click="Button1_Click" Height="24"/>
+        <Label  Content="请输入货物数量" HorizontalAlignment="Left" Height="32" Margin="271,33,0,0" VerticalAlignment="Top" Width="98"/>
+        <TextBox x:Name="context2"  HorizontalAlignment="Left" Height="23" Margin="374,33,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68" TextChanged="context2_TextChanged"/>
+        <Label x:Name="ItemInfo" Content="" HorizontalAlignment="Left" Height="32" Margin="42,65,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

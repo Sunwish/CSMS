@@ -52,21 +52,26 @@ namespace CommoditySalesManagementSystem
 
         private static SqlDataReader SqlRead(string sqlString, bool autoClose = false)
         {
-            SqlCommand com = new SqlCommand(sqlString, Connection); //创建 Command 对象
+            SqlCommand com = new SqlCommand(sqlString, Connection);
             try
             {
                 Connection.Open();
-                SqlDataReader read = com.ExecuteReader();  //用com(变量名)点上ExecuteReader()方法,该方法的类型是SqlDataReader类型
+                SqlDataReader read = com.ExecuteReader();
                 return read;
             }
             catch (Exception) { throw; }
             finally { if(autoClose) Connection.Close(); }
         }
 
-        public static int ExecuteScalar(string sql)
+        /// <summary>
+        /// 执行查询，并返回由查询返回的结果集中的第一行的第一列。 其他列或行将被忽略。
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public static object ExecuteScalar(string sql)
         {
-            SqlCommand command = new SqlCommand(sql, Connection); //创建 Command 对象
-            try { Connection.Open(); return (int)command.ExecuteScalar(); /*执行查询语句,返回匹配的行数*/ }
+            SqlCommand command = new SqlCommand(sql, Connection);
+            try { Connection.Open(); return command.ExecuteScalar(); /*执行查询语句,返回匹配的行数*/ }
             catch (Exception) { throw; }
             finally { Connection.Close(); }
         }

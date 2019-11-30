@@ -38,7 +38,7 @@ namespace CommoditySalesManagementSystem
             string sql = String.Format("select count(*) from [User] where userName='{0}'and password='{1}'", userName, password);
             try
             {
-                if (SqlManager.ExecuteScalar(sql) > 0)
+                if ((int)SqlManager.ExecuteScalar(sql) > 0)
                 {
                     //如果有匹配的行,则表明用户名和密码正确
                     MessageBox.Show("欢迎进入商品销售管理系统！", "登录成功", 0, MessageBoxImage.Information);
