@@ -15,7 +15,7 @@
             </MenuItem>
             <MenuItem Header="销售信息管理">
                 <MenuItem Header="查询销售情况" Click="MenuItem_Click_1"/>
-                <MenuItem Header="销售信息计算"/>
+                <MenuItem Header="销售信息计算" Click="MenuItem_Click_2"/>
             </MenuItem>
         </Menu>
         <Label  Content="请输入货物ID" HorizontalAlignment="Left" Height="32" Margin="42,43,0,0" VerticalAlignment="Top" Width="98"/>

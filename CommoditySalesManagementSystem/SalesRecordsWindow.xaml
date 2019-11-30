@@ -10,8 +10,10 @@
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="370" Margin="10,10,0,0" IsSynchronizedWithCurrentItem="True">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="50"></GridViewColumn>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"></GridViewColumn>
                     <GridViewColumn Header="Count" DisplayMemberBinding="{Binding Count}" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Money}" Width="100"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
