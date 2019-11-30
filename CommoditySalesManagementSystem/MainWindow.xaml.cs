@@ -25,6 +25,7 @@ namespace CommoditySalesManagementSystem
         {
             InitializeComponent();
             TextBox_UserName.Focus();
+            // ShowMainFrm();
         }
 
         private void Button_Login_Click(object sender, RoutedEventArgs e)
@@ -35,7 +36,7 @@ namespace CommoditySalesManagementSystem
         public void Login(string userName, string password, string connString)
         {
             //获取用户名和密码匹配的行的数量的SQL语句
-            string sql = String.Format("select count(*) from [User] where userName='{0}'and password='{1}'", userName, password);
+            string sql = String.Format("select count(*) from [User] where userName='{0}'and password='{1}'", userName, GetPasswordEncryption(password));
             try
             {
                 if ((int)SqlManager.ExecuteScalar(sql) > 0)
@@ -64,5 +65,36 @@ namespace CommoditySalesManagementSystem
                 Login(TextBox_UserName.Text, TextBox_Password.Password, @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSMS_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             }
         }
+
+        private static string GetPasswordEncryption(string pw)
+        {
+            StringBuilder sb = new StringBuilder();
+            using (IEnumerator<char> ieor = pw.Reverse().GetEnumerator())
+            {
+                while (ieor.MoveNext())
+                    sb.Append(ieor.Current);
+            }
+            string pwReverse = sb.ToString();
+            return CreateMD5(pw + pwReverse);
+        }
+
+        public static string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
+            }
+        }
+
     }
 }
