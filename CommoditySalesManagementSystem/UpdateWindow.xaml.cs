@@ -39,6 +39,7 @@ namespace CommoditySalesManagementSystem
 
         private void TextBox_Id_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if ("" == TextBox_Id.Text) return;
             TextBox_Id.Foreground = Brushes.Red;
             TextBox_Name.Text = TextBox_Count.Text = TextBox_SinglePrice.Text = "";
             string sql = String.Format("select * from [Commondity] where Id={0}", TextBox_Id.Text);

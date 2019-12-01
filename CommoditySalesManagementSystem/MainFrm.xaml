@@ -19,12 +19,12 @@
             </MenuItem>
         </Menu>
         <Label  Content="商品ID：" HorizontalAlignment="Left" Height="32" Margin="24,32,0,0" VerticalAlignment="Top" Width="67" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TextBox_Id"  HorizontalAlignment="Left" Height="23" Margin="96,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136" TextChanged="context1_TextChanged"/>
+        <TextBox x:Name="TextBox_Id"  HorizontalAlignment="Left" Height="23" Margin="96,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136" TextChanged="context1_TextChanged" BorderThickness="0,0,0,1" HorizontalContentAlignment="Center"/>
         <Label Content="购买数量：" HorizontalAlignment="Left" Height="32" Margin="247,32,0,0" VerticalAlignment="Top" Width="80" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TextBox_Count"  HorizontalAlignment="Left" Height="23" Margin="333,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="92" TextChanged="context2_TextChanged"/>
-        <Button x:Name="button1" Content="添加" HorizontalAlignment="Left" Margin="332,70,0,0" VerticalAlignment="Top" Width="92" Click="Button1_Click" Height="24"/>
-        <Button x:Name="button2" Content="结算" HorizontalAlignment="Left" Margin="24,275,0,0" VerticalAlignment="Top" Width="400" Click="Button2_Click" Height="41"/>
-        <ListView x:Name="ItemList" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="24,107,0,0" Width="400" Height="153" SelectionChanged="ItemList_SelectionChanged">
+        <TextBox x:Name="TextBox_Count"  HorizontalAlignment="Left" Height="23" Margin="333,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="92" TextChanged="context2_TextChanged" BorderThickness="0,0,0,1" HorizontalContentAlignment="Center"/>
+        <Button x:Name="button1" Content="添加" HorizontalAlignment="Left" Margin="332,70,0,0" VerticalAlignment="Top" Width="92" Click="Button1_Click" Height="24" Background="#FF3873FF" Foreground="White" BorderBrush="#FF4D95FF"/>
+        <Button x:Name="button2" Content="结算" HorizontalAlignment="Left" Margin="24,275,0,0" VerticalAlignment="Top" Width="400" Click="Button2_Click" Height="41" Background="#FF3873FF" Foreground="White" BorderBrush="#FF4D95FF"/>
+        <ListView x:Name="ItemList" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="24,107,0,0" Width="400" Height="153" SelectionChanged="ItemList_SelectionChanged" BorderThickness="0 1 0 1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"  Width="48"></GridViewColumn>

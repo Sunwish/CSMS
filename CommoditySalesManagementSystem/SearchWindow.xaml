@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="CSMS - 商品查询" Height="376" Width="572">
     <Grid Margin="-23,-29,-6,-7.4">
-        <ListView x:Name="ItemList" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,93,0,0" Width="513" Height="260">
+        <ListView x:Name="ItemList" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,93,0,0" Width="513" Height="260" BorderThickness="0,1,0,1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" Width="100" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
@@ -17,9 +17,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox x:Name="context1" HorizontalAlignment="Left" Height="22" Margin="151,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
-        <Label Content="输入商品ID" HorizontalAlignment="Left" Margin="47,45,0,0" VerticalAlignment="Top" Width="108" Height="34" FontSize="14" FontWeight="Bold"/>
-        <Button Content="查询此商品信息" HorizontalAlignment="Left" Margin="350,45,0,0" VerticalAlignment="Top" Width="93" Height="34" Click="Button_Click_1"/>
-        <Button Content="查看全部商品" HorizontalAlignment="Left" Margin="459,44,0,0" VerticalAlignment="Top" Width="101" Height="34" RenderTransformOrigin="1.221,0.52" Click="Button_Click"/>
+        <TextBox x:Name="context1" HorizontalAlignment="Left" Height="22" Margin="136,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" BorderThickness="0,0,0,1"/>
+        <Label Content="输入商品ID" HorizontalAlignment="Left" Margin="47,48,0,0" VerticalAlignment="Top" Width="89" Height="31" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.575,0.542"/>
+        <Button Content="查询此商品信息" HorizontalAlignment="Left" Margin="335,45,0,0" VerticalAlignment="Top" Width="104" Height="34" Click="Button_Click_1" Background="#FF3873FF" Foreground="White" BorderBrush="#FF4D95FF"/>
+        <Button Content="查看全部商品" HorizontalAlignment="Left" Margin="444,44,0,0" VerticalAlignment="Top" Width="116" Height="34" RenderTransformOrigin="1.221,0.52" Click="Button_Click" Background="#FF3873FF" Foreground="White" BorderBrush="#FF4D95FF"/>
     </Grid>
 </Window>

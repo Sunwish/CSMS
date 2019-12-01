@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="CSMS - 商品销售额统计" Height="220" Width="444.762">
+        Title="CSMS - 商品销售额统计" Height="267.2" Width="444.762">
     <Grid>
         <Label x:Name="Label_Sum" HorizontalAlignment="Left" VerticalAlignment="Top" Content="销售总额：" Margin="20 8 0 0" FontSize="14" FontWeight="Bold"/>
 
-        <ListView x:Name="listView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 45 0 0" Width="395" Height="120">
+        <ListView x:Name="listView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 45 0 0" Width="395" Height="172" BorderThickness="0,1,0,1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="50"></GridViewColumn>

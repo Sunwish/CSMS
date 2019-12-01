@@ -5,13 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="CSMS - 商品销售管理系统" Height="248.4" Width="358.6">
+        Title="CSMS - 商品销售管理系统" Height="306" Width="349.8" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox x:Name="TextBox_UserName" HorizontalAlignment="Left" Height="23" Margin="100,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Text="yjh"/>
-        <PasswordBox x:Name="TextBox_Password" HorizontalAlignment="Left" Height="23" Margin="100,94,0,0" VerticalAlignment="Top" Width="177" KeyDown="TextBox_Password_KeyDown" Password="123456"/>
-        <Button x:Name="Button_Login" Content="登录" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177" Margin="100,142,0,0" Height="34" Click="Button_Login_Click"/>
-        <Label Content="管理名" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,41,0,0" FontSize="14" FontWeight="Bold"/>
-        <Label Content="密码" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,90,0,0" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="TextBox_UserName" HorizontalAlignment="Left" Height="23" Margin="99,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Text="" BorderThickness="0,0,0,1"/>
+        <PasswordBox x:Name="TextBox_Password" HorizontalAlignment="Left" Height="23" Margin="99,151,0,0" VerticalAlignment="Top" Width="177" KeyDown="TextBox_Password_KeyDown" Password="" BorderThickness="0,0,0,1">
+            <PasswordBox.Effect>
+                <BlurEffect Radius="10"/>
+            </PasswordBox.Effect>
+        </PasswordBox>
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 0 0 0" Height="60" Width="400">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5E8DFF" Offset="0"/>
+                    <GradientStop Color="#FF3873FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Label Content="商品销售管理系统" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" Margin="86,11,0,0"/>
+        </Border>
+        <Button x:Name="Button_Login" Content="登  录" HorizontalAlignment="Left" VerticalAlignment="Top" Width="222" Margin="54,205,0,0" Height="34" Click="Button_Login_Click" Background="#FF3873FF" Foreground="White" BorderBrush="#FF4D95FF" FontSize="14"></Button>
+        <Label Content="帐号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="46,92,0,0" FontSize="14" FontWeight="Bold"/>
+        <Label Content="密码" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="46,147,0,0" FontSize="14" FontWeight="Bold"/>
 
     </Grid>
 </Window>
