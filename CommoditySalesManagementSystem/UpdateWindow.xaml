@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="CSMS - 商品信息维护" Height="342.8" Width="328">
+        Title="CSMS - 商品信息维护" Height="342.8" Width="328" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <GroupBox Header="修改" HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="271" Margin="21,59,0,0"/>
 

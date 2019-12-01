@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="CSMS - 商品录入" Height="312.8" Width="319.318">
+        Title="CSMS - 商品录入" Height="312.8" Width="319.318" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="商品编号：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="38,24,0,0" Width="74" FontSize="14" FontWeight="Bold"/>
         <TextBox x:Name="ItemId" HorizontalAlignment="Left" VerticalAlignment="Top" Width="152" Height="24" Margin="117,24,0,0" BorderThickness="0 0 0 1" HorizontalContentAlignment="Center"/>

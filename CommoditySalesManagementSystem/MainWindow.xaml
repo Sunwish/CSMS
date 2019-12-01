@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="CSMS - 商品销售管理系统" Height="306" Width="349.8" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="CSMS - 商品销售管理系统" Height="306" Width="349.8" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBox x:Name="TextBox_UserName" HorizontalAlignment="Left" Height="23" Margin="99,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Text="" BorderThickness="0,0,0,1"/>
         <PasswordBox x:Name="TextBox_Password" HorizontalAlignment="Left" Height="23" Margin="99,151,0,0" VerticalAlignment="Top" Width="177" KeyDown="TextBox_Password_KeyDown" Password="" BorderThickness="0,0,0,1">

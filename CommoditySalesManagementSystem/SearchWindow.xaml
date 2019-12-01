@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="CSMS - 商品查询" Height="376" Width="572">
+        Title="CSMS - 商品查询" Height="376" Width="572" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid Margin="-23,-29,-6,-7.4">
         <ListView x:Name="ItemList" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,93,0,0" Width="513" Height="260" BorderThickness="0,1,0,1">
             <ListView.View>
