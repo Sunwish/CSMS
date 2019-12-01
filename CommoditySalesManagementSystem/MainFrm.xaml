@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="MainFrm" Height="366.387" Width="464.538">
+        Title="CSMS - 商品销售前台" Height="366.387" Width="464.538">
     <Grid x:Name="Center">
         <Menu HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="490" Margin="0,0,-0.4,0">
             <MenuItem Header="商品信息管理">

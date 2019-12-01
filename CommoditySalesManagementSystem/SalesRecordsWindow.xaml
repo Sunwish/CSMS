@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="SalesRecordsWindow" Height="295.2" Width="546.8">
+        Title="CSMS - 商品销售记录" Height="295.2" Width="546.8">
     <Grid>
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="510" Margin="10,10,0,0" IsSynchronizedWithCurrentItem="True">
             <ListView.View>

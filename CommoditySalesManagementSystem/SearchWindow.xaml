@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="SearchWindow" Height="376" Width="572">
+        Title="CSMS - 商品查询" Height="376" Width="572">
     <Grid Margin="-23,-29,-6,-7.4">
         <ListView x:Name="ItemList" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,93,0,0" Width="513" Height="260">
             <ListView.View>
@@ -19,7 +19,7 @@
         </ListView>
         <TextBox x:Name="context1" HorizontalAlignment="Left" Height="22" Margin="151,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
         <Label Content="输入商品ID" HorizontalAlignment="Left" Margin="47,45,0,0" VerticalAlignment="Top" Width="108" Height="34" FontSize="14" FontWeight="Bold"/>
-        <Button Content="查询此货物信息" HorizontalAlignment="Left" Margin="350,45,0,0" VerticalAlignment="Top" Width="93" Height="34" Click="Button_Click_1"/>
-        <Button Content="查看全部货物" HorizontalAlignment="Left" Margin="459,44,0,0" VerticalAlignment="Top" Width="101" Height="34" RenderTransformOrigin="1.221,0.52" Click="Button_Click"/>
+        <Button Content="查询此商品信息" HorizontalAlignment="Left" Margin="350,45,0,0" VerticalAlignment="Top" Width="93" Height="34" Click="Button_Click_1"/>
+        <Button Content="查看全部商品" HorizontalAlignment="Left" Margin="459,44,0,0" VerticalAlignment="Top" Width="101" Height="34" RenderTransformOrigin="1.221,0.52" Click="Button_Click"/>
     </Grid>
 </Window>
