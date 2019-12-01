@@ -31,6 +31,7 @@ namespace CommoditySalesManagementSystem
         public MainFrm()
         {
             InitializeComponent();
+            TextBox_Id.Focus();
         }
 
         private void ShowWindow<T>() where T : Window, new()
@@ -66,13 +67,13 @@ namespace CommoditySalesManagementSystem
 
         private void Button1_Click(object sender, RoutedEventArgs e)//tianjia
         {
-            if(Brushes.Red == context1.Foreground || Brushes.Red == context2.Foreground)
+            if(Brushes.Red == TextBox_Id.Foreground || Brushes.Red == TextBox_Count.Foreground)
             {
                 MessageBox.Show("商品ID不存在或库存不足，添加失败。", "操作失败", 0, MessageBoxImage.Error);
                 return;
             }
 
-            string sql1 = String.Format("select * from Commondity where Id='{0}'", context1.Text);
+            string sql1 = String.Format("select * from Commondity where Id='{0}'", TextBox_Id.Text);
             try
             {
                 List<string> ids = SqlManager.ReadColumn(sql1, "Id");
@@ -80,25 +81,30 @@ namespace CommoditySalesManagementSystem
                 List<string> counts = SqlManager.ReadColumn(sql1, "Count");
                 List<string> prices = SqlManager.ReadColumn(sql1, "Price");
                 for (int i = 0; i < ids.Count; i++)
-                    ItemList.Items.Add(new PaymentItemInfo { Id = ids[i].Trim(), Count = context2.Text.Trim(), SinglePrice = prices[i].Trim(), Name = names[i].Trim(), SumPrice = (int.Parse(context2.Text.Trim()) * float.Parse(prices[i].Trim())).ToString() });
+                    ItemList.Items.Add(new PaymentItemInfo { Id = ids[i].Trim(), Count = TextBox_Count.Text.Trim(), SinglePrice = prices[i].Trim(), Name = names[i].Trim(), SumPrice = (int.Parse(TextBox_Count.Text.Trim()) * float.Parse(prices[i].Trim())).ToString() });
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "查询失败", 0, MessageBoxImage.Error); }
+
+            TextBox_Count.Text = "";
+            TextBox_Id.Focus();
+            TextBox_Id.SelectAll();
         }
 
         private void Button2_Click(object sender, RoutedEventArgs e) //结算
         {
-            // string sql1 = String.Format("select Count from Table where Name='{0}'", context1.Text);
-            // int c = int.Parse(SqlManager.ReadColumn(sql1, "Count")[0]);
-
+            if(0 == ItemList.Items.Count)
+            {
+                MessageBox.Show("结算列表为空", "未执行结算", 0, MessageBoxImage.Exclamation);
+                return;
+            }
+            
             List<PaymentItemInfo> successedList = new List<PaymentItemInfo>();
             List<PaymentItemInfo> failedList = new List<PaymentItemInfo>();
-
             try
             {
                 foreach (PaymentItemInfo info in ItemList.Items)
                 {
                     string sql = String.Format("INSERT INTO Sale(Id, Count, Price) VALUES('{0}','{1}','{2}')", info.Id, info.Count, info.SinglePrice);
-
                     try
                     {
                         SqlManager.ExecuteCommand(String.Format("update Commondity set Count={0} where Id={1}", int.Parse(SqlManager.ReadColumn(String.Format("select * from Commondity where Id='{0}'", info.Id), "Count")[0]) - int.Parse(info.Count), info.Id));
@@ -108,7 +114,7 @@ namespace CommoditySalesManagementSystem
                 }
                 if(ItemList.Items.Count - failedList.Count > 0)
                 {
-                    context1.Text = context2.Text = "";
+                    TextBox_Id.Text = TextBox_Count.Text = "";
                     foreach (PaymentItemInfo pi in successedList)
                         ItemList.Items.Remove(pi);
                     if (0 == failedList.Count)
@@ -131,19 +137,19 @@ namespace CommoditySalesManagementSystem
 
         private void context1_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string sql1 = String.Format("select * from Commondity where Id='{0}'", context1.Text);
+            string sql1 = String.Format("select * from Commondity where Id='{0}'", TextBox_Id.Text);
             try
             {
-                if ("" == context1.Text) ItemInfo.Content = ""; else { ItemInfo.Content = "未找到商品信息"; context1.Foreground = Brushes.Red; }
+                ItemInfo.Content = "未找到商品信息"; TextBox_Id.Foreground = Brushes.Red;
                 List<string> ids = SqlManager.ReadColumn(sql1, "Id");
                 List<string> names = SqlManager.ReadColumn(sql1, "Name");
                 List<string> counts = SqlManager.ReadColumn(sql1, "Count");
                 List<string> prices = SqlManager.ReadColumn(sql1, "Price");
                 for (int i = 0; i < ids.Count; i++)
                 {
-                    context1.Foreground = context2.Foreground = Brushes.Black;
+                    TextBox_Id.Foreground = TextBox_Count.Foreground = Brushes.Black;
                     ItemInfo.Content = names[i].Trim() + "  单价：" + prices[i].Trim() + "  库存：" + counts[i].Trim() + "件";
-                    if (int.Parse(context2.Text) > int.Parse(counts[i])) context2.Foreground = Brushes.Red;
+                    if (int.Parse(TextBox_Count.Text) > int.Parse(counts[i])) TextBox_Count.Foreground = Brushes.Red;
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
@@ -151,17 +157,35 @@ namespace CommoditySalesManagementSystem
 
         private void context2_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string sql1 = String.Format("select * from Commondity where Id='{0}'", context1.Text);
+            string sql1 = String.Format("select * from Commondity where Id='{0}'", TextBox_Id.Text);
             try
             {
                 List<string> counts = SqlManager.ReadColumn(sql1, "Count");
-                context2.Foreground = Brushes.Black;
+                TextBox_Count.Foreground = Brushes.Black;
                 for (int i = 0; i < counts.Count; i++)
-                    if (int.Parse(context2.Text) > int.Parse(counts[i])) context2.Foreground = Brushes.Red;
+                    if (int.Parse(TextBox_Count.Text) > int.Parse(counts[i])) TextBox_Count.Foreground = Brushes.Red;
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
 
             // 还有一个隐患在于单次结算场景下的分配请求超量，例如库存为10时一次性不可添加11个，但可以先添加5个，再添加6个，显然不符合实际。
+        }
+
+        private void ItemList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateDeleteButtonEnableState();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            while (0 != ItemList.SelectedItems.Count)
+                ItemList.Items.Remove(ItemList.SelectedItems[0]);
+            UpdateDeleteButtonEnableState();
+        }
+
+        private void UpdateDeleteButtonEnableState()
+        {
+            if (0 != ItemList.SelectedItems.Count) button3.IsEnabled = true;
+            else button3.IsEnabled = false;
         }
     }
 }

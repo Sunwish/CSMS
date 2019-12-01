@@ -24,16 +24,12 @@ namespace CommoditySalesManagementSystem
         public SearchWindow()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            context1.Focus();
         }
         
         private void Button_Click(object sender, RoutedEventArgs e)  //查询货物
         {
-            listbox1.Items.Clear();
+            ItemList.Items.Clear();
             string sql1 = "select * from Commondity";
             try
             {
@@ -42,19 +38,15 @@ namespace CommoditySalesManagementSystem
                 List<string> counts = SqlManager.ReadColumn(sql1, "Count");
                 List<string> prices = SqlManager.ReadColumn(sql1, "Price");
                 for (int i = 0; i < ids.Count; i++)
-                    listbox1.Items.Add(ids[i].Trim() + "  " + names[i].Trim() + "  " + prices[i].Trim() + "  " + counts[i].Trim());
+                    ItemList.Items.Add(new { Id = ids[i].Trim(), Name = names[i].Trim(), SinglePrice = prices[i].Trim(), Count = counts[i].Trim() });
             }
-            catch (Exception ex){ Console.WriteLine(ex.Message); }
-        }
-
-        private void ListBox_SelectionChanged(object sender, RoutedEventArgs e)
-        {
+            catch (Exception ex){ MessageBox.Show(ex.Message, "查询失败", 0, MessageBoxImage.Error); }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            listbox1.Items.Clear();
-            string sql1 = String.Format("select * from Commondity where Name='{0}'", context1.Text);
+            ItemList.Items.Clear();
+            string sql1 = String.Format("select * from Commondity where Id='{0}'", context1.Text);
             try
             {
                 List<string> ids = SqlManager.ReadColumn(sql1, "Id");
@@ -62,9 +54,9 @@ namespace CommoditySalesManagementSystem
                 List<string> counts = SqlManager.ReadColumn(sql1, "Count");
                 List<string> prices = SqlManager.ReadColumn(sql1, "Price");
                 for (int i = 0; i < ids.Count; i++)
-                    listbox1.Items.Add(ids[i].Trim() + "  " + names[i].Trim() + "  " + prices[i].Trim() + "  " + counts[i].Trim());
+                    ItemList.Items.Add(new { Id = ids[i].Trim(), Name = names[i].Trim(), SinglePrice = prices[i].Trim(), Count = counts[i].Trim() });
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "查询失败", 0, MessageBoxImage.Error); }
         }
     }
 }

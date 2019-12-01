@@ -5,14 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="UpdateWindow" Height="450" Width="800">
+        Title="商品信息维护" Height="342.8" Width="328">
     <Grid>
-        <Button Content="更改商品价格" HorizontalAlignment="Left" Margin="37,143,0,0" VerticalAlignment="Top" Width="186" Height="63" Click="Button_Click"/>
-        <TextBox x:Name="context" HorizontalAlignment="Left" Height="43" Margin="224,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
-        <Label Content="请输入要更改货物的名字" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.519,3.078" Height="43" Width="153" Margin="37,43,0,0"/>
-        <Button Content="更改该商品名称" HorizontalAlignment="Left" Margin="37,245,0,0" VerticalAlignment="Top" Width="186" Height="57" Click="Button_Click_1"/>
-        <TextBox x:Name="context2" HorizontalAlignment="Left" Height="63" Margin="320,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152"/>
-        <TextBox x:Name="context3" HorizontalAlignment="Left" Height="57" Margin="320,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152"/>
+        <GroupBox Header="修改" HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="271" Margin="21,59,0,0"/>
+
+        <Button x:Name="Button_Submit" Content="提交更新" HorizontalAlignment="Left" Margin="38,237,0,0" VerticalAlignment="Top" Width="226" Height="41" Click="Button_Click"/>
+        <TextBox x:Name="TextBox_Id" HorizontalAlignment="Left" Height="26" Margin="112,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" TextChanged="TextBox_Id_TextChanged"/>
+        <Label Content="商品ID：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.519,3.078" Height="26" Width="74" Margin="38,16,0,0"/>
+        <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="26" Margin="112,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="TextBox_SinglePrice" HorizontalAlignment="Left" Height="26" Margin="112,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152"/>
+        <Label Content="商品名称：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.519,3.078" Height="26" Width="74" Margin="38,89,0,0"/>
+        <Label Content="商品单价：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.519,3.078" Height="26" Width="74" Margin="38,137,0,0"/>
+        <Label Content="商品库存：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.519,3.078" Height="26" Width="74" Margin="38,183,0,0"/>
+        <TextBox x:Name="TextBox_Count" HorizontalAlignment="Left" Height="26" Margin="112,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152" RenderTransformOrigin="0.492,1.415"/>
 
     </Grid>
 </Window>

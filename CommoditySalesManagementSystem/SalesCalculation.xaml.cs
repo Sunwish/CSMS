@@ -58,7 +58,7 @@ namespace CommoditySalesManagementSystem
 
                 Label_Sum.Content = "销售总额：" + sum;
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "查询失败", 0, MessageBoxImage.Error); }
         }
 
 

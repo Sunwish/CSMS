@@ -25,7 +25,8 @@ namespace CommoditySalesManagementSystem
         {
             InitializeComponent();
             TextBox_UserName.Focus();
-            // ShowMainFrm();
+
+            ShowMainFrm();
         }
 
         private void Button_Login_Click(object sender, RoutedEventArgs e)

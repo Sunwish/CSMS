@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="SalesCalculation" Height="220" Width="444.762">
     <Grid>
-        <Label x:Name="Label_Sum" HorizontalAlignment="Left" VerticalAlignment="Top" Content="销售总额：" Margin="20 10 0 0"/>
+        <Label x:Name="Label_Sum" HorizontalAlignment="Left" VerticalAlignment="Top" Content="销售总额：" Margin="20 8 0 0" FontSize="14" FontWeight="Bold"/>
 
         <ListView x:Name="listView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 45 0 0" Width="395" Height="120">
             <ListView.View>

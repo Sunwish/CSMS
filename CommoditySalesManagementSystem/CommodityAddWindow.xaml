@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="商品录入" Height="246.4" Width="262.518">
+        Title="商品录入" Height="292.8" Width="288.918">
     <Grid>
-        <Label Content="商品编号：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,10,0,0" Width="74"/>
-        <TextBox x:Name="ItemId" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="108,10,0,0"/>
-        <Label Content="商品名称：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,45,0,0" Width="74"></Label>
-        <TextBox x:Name="ItemName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="108,45,0,0"></TextBox>
-        <Label Content="商品价格：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,85,0,0" Width="74"></Label>
-        <TextBox x:Name="ItemPrice" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="108,85,0,0"/>
-        <Label Content="商品数量：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,123,0,0" Width="74"/>
-        <TextBox x:Name="ItemCount" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="108,123,0,0"/>
-        <Button x:Name="ButtonSubmit" Content="录入" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="29,164,28,0" Width="180" Height="32" Click="ButtonSubmit_Click"></Button>
+        <Label Content="商品编号：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,18,0,0" Width="74" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="ItemId" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="112,18,0,0"/>
+        <Label Content="商品名称：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,64,0,0" Width="74" FontSize="14" FontWeight="Bold"></Label>
+        <TextBox x:Name="ItemName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="112,67,0,0"></TextBox>
+        <Label Content="商品价格：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,112,0,0" Width="74" FontSize="14" FontWeight="Bold"></Label>
+        <TextBox x:Name="ItemPrice" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="112,115,0,0"/>
+        <Label Content="商品数量：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,161,0,0" Width="74" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="ItemCount" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="24" Margin="112,161,0,0"/>
+        <Button x:Name="ButtonSubmit" Content="录入" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,209,0,0" Width="213" Height="35" Click="ButtonSubmit_Click"></Button>
     </Grid>
 </Window>

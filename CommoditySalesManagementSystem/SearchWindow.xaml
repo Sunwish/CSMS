@@ -5,13 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommoditySalesManagementSystem"
         mc:Ignorable="d"
-        Title="SearchWindow" Height="450" Width="800">
-    <Grid Margin="-23,-29,-41.4,-20">
-        <Button Content="查询全部货物" HorizontalAlignment="Left" Margin="571,50,0,0" VerticalAlignment="Top" Width="142" Height="51" RenderTransformOrigin="1.221,0.52" Click="Button_Click"/>
-        <ListBox x:Name="listbox1" HorizontalAlignment="Left" Height="246" Margin="56,132,0,0" VerticalAlignment="Top" Width="657" SelectionChanged="ListBox_SelectionChanged"/>
-        <TextBox x:Name="context1" HorizontalAlignment="Left" Height="51" Margin="183,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" TextChanged="TextBox_TextChanged"/>
-        <Label Content="输入商品名称" HorizontalAlignment="Left" Margin="70,50,0,0" VerticalAlignment="Top" Width="108" Height="51" FontSize="14" FontWeight="Bold"/>
-        <Button Content="查询此货物信息" HorizontalAlignment="Left" Margin="372,50,0,0" VerticalAlignment="Top" Width="93" Height="51" Click="Button_Click_1"/>
-
+        Title="SearchWindow" Height="376" Width="572">
+    <Grid Margin="-23,-29,-6,-7.4">
+        <ListView x:Name="ItemList" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,93,0,0" Width="513" Height="260">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" Width="100" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
+                    <GridViewColumn Header="商品名称" Width="150" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                    <GridViewColumn Header="单价" Width="100" DisplayMemberBinding="{Binding SinglePrice}"></GridViewColumn>
+                    <GridViewColumn Header="库存" Width="100" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="context1" HorizontalAlignment="Left" Height="22" Margin="151,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
+        <Label Content="输入商品ID" HorizontalAlignment="Left" Margin="47,45,0,0" VerticalAlignment="Top" Width="108" Height="34" FontSize="14" FontWeight="Bold"/>
+        <Button Content="查询此货物信息" HorizontalAlignment="Left" Margin="350,45,0,0" VerticalAlignment="Top" Width="93" Height="34" Click="Button_Click_1"/>
+        <Button Content="查看全部货物" HorizontalAlignment="Left" Margin="459,44,0,0" VerticalAlignment="Top" Width="101" Height="34" RenderTransformOrigin="1.221,0.52" Click="Button_Click"/>
     </Grid>
 </Window>

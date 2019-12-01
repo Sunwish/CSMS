@@ -40,7 +40,7 @@ namespace CommoditySalesManagementSystem
                 for (int i = 0; i < ids.Count; i++)
                     listView.Items.Add(new SaltInfo { Id = ids[i].Trim(), Count = counts[i].Trim(), Name = names[i].Trim(), Money = prices[i].Trim(), Time = times[i].Trim()});
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "查询失败", 0, MessageBoxImage.Error); }
 
         }
     }

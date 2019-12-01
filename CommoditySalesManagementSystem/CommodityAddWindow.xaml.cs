@@ -23,6 +23,7 @@ namespace CommoditySalesManagementSystem
         public CommodityAddWindow()
         {
             InitializeComponent();
+            ItemId.Focus();
         }
 
         private void ButtonSubmit_Click(object sender, RoutedEventArgs e)
@@ -33,7 +34,7 @@ namespace CommoditySalesManagementSystem
                 if (SqlManager.ExecuteCommand(sql) > 0)  MessageBox.Show("添加商品信息成功", "添加成功", 0, MessageBoxImage.Information);
                 else MessageBox.Show("添加商品信息失败", "添加失败", 0, MessageBoxImage.Information);
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message, "操作数据库出错！", 0, MessageBoxImage.Exclamation); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "添加失败！", 0, MessageBoxImage.Error); }
         }
     }
 }
