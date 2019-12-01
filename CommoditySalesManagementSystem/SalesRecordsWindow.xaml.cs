@@ -38,7 +38,11 @@ namespace CommoditySalesManagementSystem
                     names.Add(SqlManager.ReadColumn(sql_Id2Name, "name")[0]);
                 }
                 for (int i = 0; i < ids.Count; i++)
-                    listView.Items.Add(new SaltInfo { Id = ids[i].Trim(), Count = counts[i].Trim(), Name = names[i].Trim(), Money = prices[i].Trim(), Time = times[i].Trim()});
+                    listView.Items.Add(new {
+                        Id = ids[i].Trim(), Count = counts[i].Trim(),
+                        Name = names[i].Trim(), Money = prices[i].Trim(),
+                        Time = times[i].Trim(), SumMoney = float.Parse(prices[i].Trim()) * int.Parse(counts[i].Trim())
+                    });
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "查询失败", 0, MessageBoxImage.Error); }
 

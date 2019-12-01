@@ -12,9 +12,10 @@
                 <GridView>
                     <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="50"></GridViewColumn>
                     <GridViewColumn Header="商品名称" DisplayMemberBinding="{Binding Name}" Width="100"></GridViewColumn>
-                    <GridViewColumn Header="销售数量" DisplayMemberBinding="{Binding Count}" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="销量" DisplayMemberBinding="{Binding Count}" Width="60"></GridViewColumn>
                     <GridViewColumn Header="单价" DisplayMemberBinding="{Binding Money}" Width="75"></GridViewColumn>
-                    <GridViewColumn Header="时间" DisplayMemberBinding="{Binding Time}" Width="150"></GridViewColumn>
+                    <GridViewColumn Header="销售额" DisplayMemberBinding="{Binding SumMoney}" Width="75"></GridViewColumn>
+                    <GridViewColumn Header="时间" DisplayMemberBinding="{Binding Time}" Width="140"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
