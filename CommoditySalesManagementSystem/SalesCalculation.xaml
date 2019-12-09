@@ -9,7 +9,7 @@
     <Grid>
         <Label x:Name="Label_Sum" HorizontalAlignment="Left" VerticalAlignment="Top" Content="销售总额：" Margin="20 8 0 0" FontSize="14" FontWeight="Bold"/>
 
-        <ListView x:Name="listView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 45 0 0" Width="395" Height="172" BorderThickness="0,1,0,1">
+        <ListView x:Name="listView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 45 0 0" Width="395" Height="172" BorderThickness="0,1,0,1" MouseLeftButtonUp="listView_MouseLeftButtonUp">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="50"></GridViewColumn>

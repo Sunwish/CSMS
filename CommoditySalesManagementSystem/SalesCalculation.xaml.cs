@@ -61,6 +61,14 @@ namespace CommoditySalesManagementSystem
             catch (Exception ex) { MessageBox.Show(ex.Message, "查询失败", 0, MessageBoxImage.Error); }
         }
 
-
+        private void listView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            SaltInfo si = listView.SelectedItem as SaltInfo;
+            if (null != si)
+            {
+                e.Handled = true;
+                new SalesRecordsWindow(si.Id).Show();
+            }
+        }
     }
 }

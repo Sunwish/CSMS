@@ -34,36 +34,12 @@ namespace CommoditySalesManagementSystem
             TextBox_Id.Focus();
         }
 
-        private void ShowWindow<T>() where T : Window, new()
-        {
-            T window = new T();
-            window.Show();
-        }
-
-        private void MenuItem_Click_Add(object sender, RoutedEventArgs e)
-        {
-            ShowWindow<CommodityAddWindow>();
-        }
-
-        private void MenuItem_Click_Search(object sender, RoutedEventArgs e)
-        {
-            ShowWindow<SearchWindow>();                 
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            ShowWindow<UpdateWindow>();
-        }
-
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            ShowWindow<SalesRecordsWindow>();
-        }
-
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        {
-            ShowWindow<SalesCalculation>();
-        }
+        private void ShowWindow<T>() where T : Window, new() => new T().Show();
+        private void MenuItem_Click_Add(object sender, RoutedEventArgs e) => ShowWindow<CommodityAddWindow>();
+        private void MenuItem_Click_Search(object sender, RoutedEventArgs e) => ShowWindow<SearchWindow>();
+        private void MenuItem_Click(object sender, RoutedEventArgs e) => ShowWindow<UpdateWindow>();
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e) => ShowWindow<SalesRecordsWindow>();
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e) => ShowWindow<SalesCalculation>();
 
         private void Button1_Click(object sender, RoutedEventArgs e)//tianjia
         {

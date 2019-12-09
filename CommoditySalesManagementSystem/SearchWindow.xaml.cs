@@ -46,7 +46,8 @@ namespace CommoditySalesManagementSystem
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             ItemList.Items.Clear();
-            string sql1 = String.Format("select * from Commondity where Id='{0}'", context1.Text);
+            // string sql1 = String.Format("select * from Commondity where Id='{0}'", context1.Text);
+            string sql1 = String.Format("select * from Commondity where Id like '{0}%'", context1.Text);
             try
             {
                 List<string> ids = SqlManager.ReadColumn(sql1, "Id");
