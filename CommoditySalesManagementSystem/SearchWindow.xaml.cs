@@ -45,7 +45,12 @@ namespace CommoditySalesManagementSystem
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            String key = context1.Text;
             ItemList.Items.Clear();
+
+
+
+            ItemList.Items.Add("id".Trim()+ "name".Trim()+"Count".Trim()+ "price".Trim());
             string sql1 = String.Format("select * from Commondity where Id='{0}'", context1.Text);
             try
             {

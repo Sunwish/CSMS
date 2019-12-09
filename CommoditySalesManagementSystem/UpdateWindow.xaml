@@ -7,17 +7,21 @@
         mc:Ignorable="d"
         Title="CSMS - 商品信息维护" Height="342.8" Width="328" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <GroupBox Header="修改" HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="271" Margin="21,59,0,0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="修改" HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="271" Margin="21,59,0,0" Grid.ColumnSpan="2"/>
 
-        <Button x:Name="Button_Submit" Content="提交更新" HorizontalAlignment="Left" Margin="38,237,0,0" VerticalAlignment="Top" Width="226" Height="41" Click="Button_Click" Background="#FF3873FF" Foreground="White" BorderBrush="#FF4D95FF"/>
-        <TextBox x:Name="TextBox_Id" HorizontalAlignment="Left" Height="26" Margin="112,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" TextChanged="TextBox_Id_TextChanged" BorderThickness="0 0 0 1" HorizontalContentAlignment="Center"/>
+        <Button x:Name="Button_Submit" Content="提交更新" HorizontalAlignment="Left" Margin="38,237,0,0" VerticalAlignment="Top" Width="226" Height="41" Click="Button_Click" Background="#FF3873FF" Foreground="White" BorderBrush="#FF4D95FF" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TextBox_Id" HorizontalAlignment="Left" Height="26" Margin="112,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" TextChanged="TextBox_Id_TextChanged" BorderThickness="0 0 0 1" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <Label Content="商品ID：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.519,3.078" Height="26" Width="74" Margin="38,16,0,0" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="26" Margin="112,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152" BorderThickness="0 0 0 1" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="TextBox_SinglePrice" HorizontalAlignment="Left" Height="26" Margin="112,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152" BorderThickness="0 0 0 1" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="26" Margin="112,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152" BorderThickness="0 0 0 1" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TextBox_SinglePrice" HorizontalAlignment="Left" Height="26" Margin="112,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152" BorderThickness="0 0 0 1" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <Label Content="商品名称：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.519,3.078" Height="26" Width="74" Margin="38,89,0,0"/>
         <Label Content="商品单价：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.519,3.078" Height="26" Width="74" Margin="38,137,0,0"/>
         <Label Content="商品库存：" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.519,3.078" Height="26" Width="74" Margin="38,183,0,0"/>
-        <TextBox x:Name="TextBox_Count" HorizontalAlignment="Left" Height="26" Margin="112,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152" RenderTransformOrigin="0.492,1.415" BorderThickness="0 0 0 1" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="TextBox_Count" HorizontalAlignment="Left" Height="26" Margin="112,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152" RenderTransformOrigin="0.492,1.415" BorderThickness="0 0 0 1" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
